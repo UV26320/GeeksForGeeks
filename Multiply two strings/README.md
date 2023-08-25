@@ -1,6 +1,6 @@
-Multiply two strings
+-> Multiply two strings
 
-Medium   Accuracy: 20.06%
+-> Medium   Accuracy: 20.06%
 
 
 Given two numbers as strings s1 and s2. Calculate their Product.
