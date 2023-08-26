@@ -28,16 +28,13 @@ public:
                 --f[s[l]];
                 if (f[s[l]] == 0)
                     f.erase(s[l]);
-
                 ++l;
             }
 
             if (f.size() == k)
                 ans = max(ans, r - l + 1);
-
             ++r;
         }
-
         return ans;
     }
 };
