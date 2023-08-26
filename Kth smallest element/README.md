@@ -39,9 +39,9 @@ array is 15.
 <hr>
 
 ```bash
-<span>Expected Time Complexity: O(n)</span>
-<span>Expected Auxiliary Space: O(log(n))</span>
-<span>Constraints:</span>
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(log(n))
+Constraints:
 1 <= N <= 105
 1 <= arr[i] <= 105
 1 <= K <= N
