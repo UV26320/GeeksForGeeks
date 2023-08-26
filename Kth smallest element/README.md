@@ -38,10 +38,11 @@ array is 15.
 
 <hr>
 
+```bash
 <span>Expected Time Complexity: O(n)</span>
 <span>Expected Auxiliary Space: O(log(n))</span>
 <span>Constraints:</span>
 1 <= N <= 105
 1 <= arr[i] <= 105
 1 <= K <= N
-
+```
