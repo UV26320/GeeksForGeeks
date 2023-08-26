@@ -1,5 +1,5 @@
 # Longest K Unique Characters Substring
-# # Medium
+## Medium
 <div>
     <p>This problem involves finding the size of the longest possible substring that contains exactly K unique characters within a given string. If no such substring exists, the function returns -1.</p>
     <h3>Example 1:</h3>
