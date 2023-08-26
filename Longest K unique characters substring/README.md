@@ -1,38 +1,16 @@
--->> Longest K unique characters substring
--->> Medium  Accuracy: 34.65%
-
-Given a string you need to print the size of the longest possible substring that has exactly K unique characters. If there is no possible substring then print -1.
-
-Example 1:
-
-Input:
-S = "aabacbebebe", K = 3
-
-Output: 
-7
-
-Explanation: 
-"cbebebe" is the longest substring with 3 distinct characters.
-
-
-Example 2:
-
-Input: 
-S = "aaaa", K = 2
-
-Output: -1
-
-Explanation: 
-There's no substring with 2 distinct characters.
-
-
-Your Task:
-You don't need to read input or print anything. Your task is to complete the function longestKSubstr() which takes the string S and an integer K as input and returns the length of the longest substring with exactly K distinct characters. If there is no substring with exactly K distinct characters then return -1.
-
-Expected Time Complexity: O(|S|).
-Expected Auxiliary Space: O(|S|).
-
-Constraints:
-1 ≤ |S| ≤ 105
-1 ≤ K ≤ 26
-All characters are lowercase latin characters.
+# Longest K Unique Characters Substring
+## Medium
+<div>
+    <p>This problem involves finding the size of the longest possible substring that contains exactly K unique characters within a given string. If no such substring exists, the function returns -1.</p>
+    <h3>Example 1:</h3>
+    <p><strong>Input:</strong><br>S = "aabacbebebe", K = 3</p>
+    <p><strong>Output:</strong><br>7</p>
+    <p><strong>Explanation:</strong><br>The longest substring with 3 distinct characters is "cbebebe".</p>
+    <h3>Example 2:</h3>
+    <p><strong>Input:</strong><br>S = "aaaa", K = 2</p>
+    <p><strong>Output:</strong><br>-1</p>
+    <p><strong>Explanation:</strong><br>There's no substring with 2 distinct characters.</p>
+    <p><strong>Your Task:</strong> Implement the function <code>longestKSubstr(S: str, K: int) -&gt; int</code> that takes a string <code>S</code> and an integer <code>K</code> as input and returns the length of the longest substring with exactly K distinct characters. If no such substring exists, return -1.</p>
+    <p><strong>Expected Time Complexity:</strong> O(|S|)<br><strong>Expected Auxiliary Space:</strong> O(|S|)</p>
+    <p><strong>Constraints:</strong> 1 ≤ |S| ≤ 10^5, 1 ≤ K ≤ 26. All characters are lowercase Latin characters.</p>
+</div>
