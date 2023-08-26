@@ -19,6 +19,7 @@ Explanation :
 3rd smallest element in the given 
 array is 7.
 ```
+## Example 2:
 
 ```bash
 Input:
@@ -37,9 +38,9 @@ array is 15.
 
 <hr>
 
-Expected Time Complexity: O(n)
-Expected Auxiliary Space: O(log(n))
-Constraints:
+<span>Expected Time Complexity: O(n)</span>
+<span>Expected Auxiliary Space: O(log(n))</span>
+<span>Constraints:</span>
 1 <= N <= 105
 1 <= arr[i] <= 105
 1 <= K <= N
