@@ -1,38 +1,22 @@
--->> Longest K unique characters substring
--->> Medium  Accuracy: 34.65%
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Longest K Unique Characters Substring</title>
+</head>
+<body>
+    <h1>Longest K Unique Characters Substring</h1>
+    <p>This is a Python function to find the length of the longest substring with exactly K distinct characters.</p>
+    <h2>Example Usage</h2>
+    <pre><code>def longestKSubstr(S, K):
+    # ... (the function code)
 
-Given a string you need to print the size of the longest possible substring that has exactly K unique characters. If there is no possible substring then print -1.
+S1 = "aabacbebebe"
+K1 = 3
+print(longestKSubstr(S1, K1))  # Output: 7
 
-Example 1:
-
-Input:
-S = "aabacbebebe", K = 3
-
-Output: 
-7
-
-Explanation: 
-"cbebebe" is the longest substring with 3 distinct characters.
-
-
-Example 2:
-
-Input: 
-S = "aaaa", K = 2
-
-Output: -1
-
-Explanation: 
-There's no substring with 2 distinct characters.
-
-
-Your Task:
-You don't need to read input or print anything. Your task is to complete the function longestKSubstr() which takes the string S and an integer K as input and returns the length of the longest substring with exactly K distinct characters. If there is no substring with exactly K distinct characters then return -1.
-
-Expected Time Complexity: O(|S|).
-Expected Auxiliary Space: O(|S|).
-
-Constraints:
-1 ≤ |S| ≤ 105
-1 ≤ K ≤ 26
-All characters are lowercase latin characters.
+S2 = "aaaa"
+K2 = 2
+print(longestKSubstr(S2, K2))  # Output: -1
+</code></pre>
+</body>
+</html>
