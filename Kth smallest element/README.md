@@ -40,6 +40,7 @@ array is 15.
 ```bash
 Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(log(n))
+
 Constraints:
 1 <= N <= 105
 1 <= arr[i] <= 105
