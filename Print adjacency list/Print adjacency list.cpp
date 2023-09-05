@@ -14,7 +14,6 @@ public:
 
         for (auto i : edges)
         {
-
             g[i.first].push_back(i.second);
             g[i.second].push_back(i.first);
         }
@@ -28,8 +27,7 @@ int main()
 {
     int tc;
     cin >> tc;
-    while (tc--)
-    {
+    while (tc--){
         int V, E;
         cin >> V >> E;
         vector<pair<int, int>> edges;
