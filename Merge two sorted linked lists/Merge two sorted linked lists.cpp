@@ -116,6 +116,12 @@ Node *solve(Node *head1, Node *head2)
         {
             curr1 = next1;
             next1 = next1->next;
+
+            if (next1 == NULL)
+            {
+                curr1->next = curr2;
+                return head1;
+            }
         }
     }
     return head1;
@@ -132,9 +138,10 @@ Node *sortedMerge(Node *head1, Node *head2)
         return head1;
 
     if (head1->data <= head2->data)
-       return solve(head1, head2);
-    else{
-       Node* result = solve(head2, head1);
-       return result;
+        return solve(head1, head2);
+    else
+    {
+        Node *result = solve(head2, head1);
+        return result;
     }
 }
