@@ -37,8 +37,6 @@ public:
                 {
                     matrix[i][j] = 1;
                 }
-                else
-                return 
             }
         }
     }
