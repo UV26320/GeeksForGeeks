@@ -1,13 +1,12 @@
 # Number of distinct subsequences
 
-## Hard |  Accuracy: 30.43%
+## Hard  |  Accuracy: 30.43%
 
-<p>Given a string consisting of lower case English alphabets, the task is to find the number of distinct subsequences of the string</p>
-<span>Note: Answer can be very large, so, output will be answer modulo 109+7.</span>
+<p>Given a string consisting of lower case English alphabets, the task is to find the number of distinct subsequences of the string
+Note: Answer can be very large, so, ouput will be answer modulo 109+7.</p>
 
 
 # Example 1:
-
 ```bash
 Input: 
 s = "gfg"
