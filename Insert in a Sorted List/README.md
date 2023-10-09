@@ -1,6 +1,6 @@
 # Insert in a Sorted List
 
-# Easy  |  Accuracy: 31.37%
+## Easy  |  Accuracy: 31.37%
 
 <p>Given a linked list sorted in ascending order and an integer called data, insert data in the linked list such that the list remains sorted.</p>
 
