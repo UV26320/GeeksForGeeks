@@ -112,6 +112,7 @@ public:
     // Function to check whether a binary tree is balanced or not.
     int check(Node *root)
     {
+        
         // Check if the tree is empty.
         if (root == NULL)
             return 0;
