@@ -72,23 +72,29 @@ Node *removeDuplicates(Node *head)
 {
     // your code goes here
 
-    Node *currentNode = head;
+    // for empty list
+    if (head == NULL)
+        return NULL;
 
-    while (currentNode != nullptr && currentNode->next != nullptr)
+    // for non-empty list
+
+    Node *curr = head;
+
+    while (curr != NULL)
     {
 
-        if (currentNode->data == currentNode->next->data)
+        if ((curr->next != NULL) && (curr->data == curr->next->data))
         {
 
-            Node *temp = currentNode->next;
-            currentNode->next = currentNode->next->next;
-            delete temp;
+            Node *next_next = curr->next->next;
+            Node *nodeToDelete = curr->next;
+            delete (nodeToDelete);
+            curr->next = next_next;
         }
         else
-        {
-            currentNode = currentNode->next;
+        { // not equal
+            curr = curr->next;
         }
     }
-
     return head;
 }
