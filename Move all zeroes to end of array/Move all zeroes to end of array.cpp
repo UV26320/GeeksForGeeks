@@ -16,7 +16,7 @@ public:
 	    int i = 0 ;
 	    
 	    for(int j = 0 ; j <n ; ++j){
-	        if(arr[j]){
+	        if(arr[j]){      // here we can check arr[j] is zero or not if it is not then we have add it in front and increment i 
 	            arr[i] = arr[j];
 	            i++;
 	        }
