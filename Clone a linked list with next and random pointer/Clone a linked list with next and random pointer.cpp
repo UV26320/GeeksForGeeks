@@ -41,7 +41,7 @@ class Solution
     {
         //Write your code here
         
-        //Approach 1 = space Complexity(N)
+        //Approach 1 = Time Complexity(N) space Complexity(N)
         
         // step 1 = creat a clone list 
         Node* cloneHead = NULL;
@@ -75,6 +75,66 @@ class Solution
             originalNode = originalNode -> next;
             cloneNode = cloneNode -> next; 
         }
+        
+        return cloneHead;
+        
+
+
+
+        // Approach 2 : T.C (N) & S.C(1)
+        
+        
+        // step1 : creat a clone list 
+        Node* cloneHead = NULL;
+        Node* cloneTail = NULL;
+        
+        Node* temp = head;
+        while(temp != NULL){
+            insertAtTail(cloneHead,cloneTail,temp->data);
+            temp = temp -> next;
+        }
+        
+        // step2 : cloneNodes add in between original list
+        Node* originalNode = head ;
+        Node* cloneNode = cloneHead;
+        
+        while(originalNode != NULL && cloneNode != NULL){
+            Node* next = originalNode -> next;
+            originalNode -> next = cloneNode;
+            originalNode = next ;
+            
+            next = cloneNode ->next;
+            cloneNode -> next = originalNode;
+            cloneNode = next;
+        }
+        
+        // step3 : random pointer copy 
+        temp = head ;
+        
+        while(temp != NULL){
+            if(temp -> next != NULL){
+                temp -> next -> arb = temp -> arb ? temp -> arb -> next : temp -> arb ;
+            }
+            temp = temp -> next -> next ;
+        }
+        
+        
+        // step4 : revert changes done in step2
+        originalNode = head;
+        cloneNode = cloneHead;
+        
+        while(originalNode != NULL && cloneNode != NULL){
+            originalNode -> next = cloneNode -> next ;
+            originalNode = originalNode -> next ;
+            
+            if(originalNode != NULL){
+            cloneNode -> next = originalNode ->next ;
+            }
+            cloneNode = cloneNode -> next ;
+            
+        }
+            
+        // step5 : return ans
         
         return cloneHead;
     }
