@@ -32,7 +32,7 @@ public:
             s.push(i);
         }
 
-        // step 2 : check which elment is clebrity
+        // step 2 : check which element is celebrity
         while (s.size() > 1)
         {
 
@@ -49,7 +49,7 @@ public:
         }
 
         // step3 : confirm 0r verify it
-        //       -> single elemet in stack is potential celebrity
+        //       -> single element in stack is potential celebrity
 
         int candidate = s.top();
 
@@ -77,7 +77,7 @@ public:
                 oneCount++;
         }
 
-        // all zero expect digonal
+        // all zero expect diagonal
         if (oneCount != n - 1)
         {
             return -1;
