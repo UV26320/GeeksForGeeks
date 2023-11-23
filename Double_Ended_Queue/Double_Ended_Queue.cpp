@@ -163,11 +163,11 @@ public:
     bool isFull()
     {
         // Write your code here.
-        if ((front == 0 && rear == size - 1) ||
-            (front != 0 && rear == (front - 1) % (size - 1)))
-        {
-            return 1;
-        }
-        
+        // if ((front == 0 && rear == size - 1) ||
+        //     (front != 0 && rear == (front - 1) % (size - 1)))
+        // {
+        //     return 1;
+        // }
+        return (front == 0 && rear == size - 1) || (front == rear + 1);
     }
 };
