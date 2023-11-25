@@ -106,7 +106,8 @@ public:
             pair<bool, int> q = make_pair(true, 0);
             return q;
         }
-
+         
+        // leaf node     
         if (root->left == NULL && root->right == NULL)
         {
             pair<bool, int> q = make_pair(true, root->data);
