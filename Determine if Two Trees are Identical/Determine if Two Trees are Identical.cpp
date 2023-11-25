@@ -57,8 +57,26 @@ private:
 public:
     // Function to check if two trees are identical.
     bool isIdentical(Node *r1, Node *r2)
-    {
-        return checkIdentical(r1, r2);
+    {    
+        // approach 1
+        // return checkIdentical(r1, r2);
+
+       // approach 2
+
+        if(r1 == nullptr && r2 == nullptr) return 1;
+        
+        if(r1 != nullptr && r2 == nullptr) return 0;
+        
+        if(r1 == nullptr && r2 != nullptr) return 0;
+        
+        bool left = isIdentical(r1->left,r2->left);
+        bool right = isIdentical(r1->right,r2->right);
+        
+        bool value =( r1->data == r2->data);
+        
+        if(left && right && value) return true;
+        else return false;
+
     }
 };
 
