@@ -116,18 +116,21 @@ public:
         pair<bool, int> leftAns = isSumTreeFast(root->left);
         pair<bool, int> rightAns = isSumTreeFast(root->right);
 
-        bool left = leftAns.first;
-        bool right = rightAns.first;
+        bool isLeftSumTree = leftAns.first;
+        bool isRightSumTree = rightAns.first;
 
-        bool con = (root->data == leftAns.second + rightAns.second);
+        int leftSum = leftAns.second;
+        int rightSum = rightAns.second;
+
+        bool con = (root->data == leftSum + rightSum);
 
         pair<bool, int> ans;
 
-        if (left && right && con)
+        if (isLeftSumTree && isRightSumTree && con)
         {
 
             ans.first = true;
-            ans.second = 2 * root->data;
+            ans.second =  root->data + leftSum + rightSum;
         }
         else
         {
