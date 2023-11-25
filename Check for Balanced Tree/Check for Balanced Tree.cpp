@@ -106,35 +106,66 @@ struct Node
 };
  */
 
-class Solution
-{
+class Solution {
+
+private:
+int height(struct Node* node){
+        // code here 
+        if(node== NULL) return 0;
+        int left = height(node->left);
+        int right = height(node->right);
+        int ans = max(left,right) + 1;
+        
+        return ans;
+    }
+    
 public:
     // Function to check whether a binary tree is balanced or not.
-    int check(Node *root)
-    {
+    
+    pair<bool,int> isBalancedFast(Node* root){
         
-        // Check if the tree is empty.
-        if (root == NULL)
-            return 0;
-
-        // Recursively check the left and right subtrees.
-        int left = check(root->left);
-        int right = check(root->right);
-
-        // If either subtree is unbalanced or the height difference
-        // between left and right is more than 1, set the flag to 1.
-        if (left == -1 || right == -1 || abs(left - right) > 1)
-            return -1;
-
-        // Return the height of the current node's subtree.
-        return 1 + max(left, right);
+        //  base case
+        if(root == NULL){
+            pair<bool,int> p = make_pair(true,0);
+            return p;
+        }
+        
+        pair<bool,int> left = isBalancedFast(root->left);
+        pair<bool,int> right = isBalancedFast(root->right);
+        
+        bool leftAns = left.first;
+        bool rightAns = right.first;
+        
+       bool diff = abs(left.second - right.second) <= 1;
+       
+      pair<bool,int>ans;
+      
+      // height of tree
+      ans.second = max(left.second,right.second) + 1;
+      
+      // check tree balanced or not 
+      if(leftAns && rightAns && diff) ans.first = true;
+      else  ans.first = false;
+    
+      return ans;    
     }
-
-    bool isBalanced(Node *root)
-    {
-        int flag = 0;
-        flag = check(root);
-        return (flag == -1) ? false : true;
+    
+      // Approach 1st -- O(N^2)
+      bool isBalanced(Node* root) {
+       
+    //   // base case
+    //   if(root == NULL) return true;
+       
+    //   bool left = isBalanced(root->left);
+    //   bool right = isBalanced(root->right);
+    //   bool diff = abs(height(root->left) - height(root->right) <= 1);
+       
+    //   if(left && right && diff) return true;
+    //   else return false;
+    
+    // Approach 2nd -- O(N)
+      
+      return isBalancedFast(root).first;
     }
 };
 
