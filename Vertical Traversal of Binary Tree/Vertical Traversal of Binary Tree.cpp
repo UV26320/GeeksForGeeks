@@ -129,7 +129,8 @@ public:
 
                 if (frontNode->left)
                     q.push(make_pair(frontNode->left, make_pair(hd - 1, lvl + 1)));
-                else
+                
+                if (frontNode->right)
                     q.push(make_pair(frontNode->right, make_pair(hd + 1, lvl + 1)));
             }
 
