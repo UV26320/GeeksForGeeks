@@ -38,58 +38,66 @@ struct Node
   Node* right;
 };
 */
-class Solution
-{
+class Solution {
 private:
-    unordered_map<int, int> indexMap; // Map to store indices of elements in inOrder traversal
-
-    int findPosition(int in[], int element, int n)
-    {
-        for (int i = 0; i < n; i++)
-        {
-            if (in[i] == element)
-                return i;
+    
+    void creatMapping(int in[],map<int,int> &nodeToIndex , int n){
+        
+        for(int i = 0 ; i < n ; ++i){
+            nodeToIndex[in[i]] = i ;
         }
-        return -1;
-    }
+    } 
+   
+    // int findPosition(int in[], int element, int n) {
+    //     for (int i = 0; i < n; i++) {
+    //         if (in[i] == element)
+    //             return i;
+    //     }
+    //     return -1;
+    // }
 
-    Node *solve(int in[], int pre[], int &index, int inOrderedStart, int inOrderedEnd, int n)
-    {
+    Node *solve(int in[], int pre[], int &index, int inOrderedStart,
+    int inOrderedEnd, int n,map<int,int> &nodeToIndex) {
+       
+       // base case
         if (index >= n || inOrderedStart > inOrderedEnd)
             return NULL;
-
+        
+        // create a root node for element 
         int element = pre[index++];
         Node *root = new Node(element);
+        
+        
         // int position = findPosition(in, element, n);
-        int position = indexMap[element];
 
-        if (position == -1)
-        {
+        // find element's index in inorder
+        int position = nodeToIndex[element];
+        
+
+        if (position == -1) {
             delete root;
             return NULL;
         }
 
-        root->left = solve(in, pre, index, inOrderedStart, position - 1, n);
-        root->right = solve(in, pre, index, position + 1, inOrderedEnd, n);
+        root->left = solve(in, pre, index, inOrderedStart, position - 1, n,nodeToIndex);
+        root->right = solve(in, pre, index, position + 1, inOrderedEnd, n,nodeToIndex);
 
         return root;
     }
 
 public:
-    Node *buildTree(int in[], int pre[], int n)
-    {
+    Node *buildTree(int in[], int pre[], int n) {
         if (n == 0)
             return NULL;
+            
+        map<int,int>nodeToIndex;
+        
+        // creating nodes to index mapping 
+        
+        creatMapping(in,nodeToIndex,n);
 
         int preOrderIndex = 0;
-
-        // Create a map to store indices of elements in inorder traversal
-        for (int i = 0; i < n; ++i)
-        {
-            indexMap[in[i]] = i;
-        }
-
-        Node *ans = solve(in, pre, preOrderIndex, 0, n - 1, n);
+        Node *ans = solve(in, pre, preOrderIndex, 0, n - 1, n,nodeToIndex);
         return ans;
     }
 };
