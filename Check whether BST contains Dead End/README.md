@@ -40,7 +40,8 @@ Node 9 is a Dead End in the given BST.
 
 <hr>
 
-<p>Your Task: You don't have to input or print anything. Complete the function isDeadEnd() which takes BST as input and returns a boolean value.</p>
+<span>Your Task:<span>
+<p>You don't have to input or print anything. Complete the function isDeadEnd() which takes BST as input and returns a boolean value.</span>
 
 ```bash
 Expected Time Complexity: O(N), where N is the number of nodes in the BST.
