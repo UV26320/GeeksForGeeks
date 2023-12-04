@@ -48,12 +48,10 @@ public:
                 ans += to_string(sum);
                 ++index;
             }
-
             if (carry)
             {
                 ans += to_string(carry);
             }
-
             reverse(ans.begin(), ans.end());
 
             return ans;
