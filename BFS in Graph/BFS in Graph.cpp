@@ -1,17 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-#include <queue>
 #include <set>
+#include <queue>
 
 using namespace std;
 
-void prepareAdjList(unordered_map<int, set<int>> &adjList, vector<pair<int, int>> &adj)
+void prepareAdjList(unordered_map<int, set<int>> &adjList, vector<vector<int>> &adj)
 {
     for (const auto &edge : adj)
     {
-        int u = edge.first;
-        int v = edge.second;
+        int u = edge[0];
+        int v = edge[1];
 
         adjList[u].insert(v);
         adjList[v].insert(u);
@@ -31,22 +31,28 @@ void bfs(unordered_map<int, set<int>> &adjList, unordered_map<int, bool> &visite
 
         ans.push_back(frontNode);
 
-        for (int i : adjList[frontNode])
+        for (auto neighbor : adjList[frontNode])
         {
-            if (!visited[i])
+            if (!visited[neighbor])
             {
-                q.push(i);
-                visited[i] = true;
+                q.push(neighbor);
+                visited[neighbor] = true;
             }
         }
     }
 }
 
-vector<vector<int>> bfsTraversal(int n, vector<pair<int, int>> &adj)
+vector<int> bfsTraversal(int n, vector<vector<int>> &adj)
 {
     unordered_map<int, set<int>> adjList;
-    vector<vector<int>> result;
+    vector<int> ans;
     unordered_map<int, bool> visited;
+
+    // Initialize visited nodes as false
+    for (int i = 0; i < n; ++i)
+    {
+        visited[i] = false;
+    }
 
     prepareAdjList(adjList, adj);
 
@@ -54,10 +60,8 @@ vector<vector<int>> bfsTraversal(int n, vector<pair<int, int>> &adj)
     {
         if (!visited[i])
         {
-            vector<int> ans;
             bfs(adjList, visited, ans, i);
-            result.push_back(ans);
         }
     }
-    return result;
+    return ans;
 }
