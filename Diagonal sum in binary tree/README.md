@@ -18,10 +18,6 @@ Output:
 7 4
 
 
-
-
-
-
 **Your Task:**
 You do need to take input. Just complete the function `diagonalSum()` that takes the root node of the tree as a parameter and returns an array containing the diagonal sums for every diagonal present in the tree with slope -1.
 
