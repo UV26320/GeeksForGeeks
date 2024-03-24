@@ -12,6 +12,7 @@ class Solution
 public:
     stack<int> insertAtBottom(stack<int> st, int x)
     {
+        
         stack<int> ans;
         while (!st.empty())
         {
