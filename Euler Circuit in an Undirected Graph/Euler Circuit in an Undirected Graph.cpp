@@ -15,7 +15,6 @@ public:
             if (int(adj[i].size()) % 2 == 1)
                 return false;
         }
-
         return true;
     }
 };
