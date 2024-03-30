@@ -4,10 +4,6 @@
 
 **Accuracy:** 36.98%
 
-**Submissions:** 22K+
-
-**Points:** 2
-
 Given the root of a binary search tree and a number n, find the greatest number in the binary search tree that is less than or equal to n. 
 
 **Example 1:**
