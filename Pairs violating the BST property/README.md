@@ -47,7 +47,6 @@ There are a total of 8 pairs that violate the BST properties.
 - \( -10^9 \leq \text{{node->data}} \leq 10^9 \)
 
 ## Approach:
-
 1. Traverse the binary tree in an inorder manner.
 2. While traversing, keep track of the nodes and their values.
 3. For each node, check if its value violates the BST property with respect to all nodes traversed before it.
