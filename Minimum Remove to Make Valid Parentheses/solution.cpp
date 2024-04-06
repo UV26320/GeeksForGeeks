@@ -1,33 +1,34 @@
-# 1249. Minimum Remove to Make Valid Parentheses
+class Solution
+{
+public:
+    string minRemoveToMakeValid(string s)
+    {
 
-## Problem Description
+        stack<int> st;
 
-Given a string `s` of `'('`, `')'`, and lowercase English characters, your task is to remove the minimum number of parentheses ( `'('` or `')'`, in any positions ) so that the resulting parentheses string is valid and return any valid string.
+        for (int i = 0; i < s.length(); ++i)
+        {
 
-Formally, a parentheses string is valid if and only if:
+            if (s[i] == '(')
+                st.push(i);
+            else if (s[i] == ')')
+            {
+                if (!st.empty() && s[st.top()] == '(')
+                    st.pop();
+                else
+                    s[i] = '*'; // Mark invalid closing parenthesis for removal
+            }
+        }
 
-1. It is the empty string, contains only lowercase characters, or
-2. It can be written as AB (A concatenated with B), where A and B are valid strings, or
-3. It can be written as (A), where A is a valid string.
+        while (!st.empty())
+        {
+            s[st.top()] = '*'; // Mark remaining unmatched opening parenthesis for removal
+            st.pop();
+        }
 
-### Example 1:
+        // Remove marked characters
+        s.erase(remove(s.begin(), s.end(), '*'), s.end());
 
-Input: `s = "lee(t(c)o)de)"`  
-Output: `"lee(t(c)o)de"`  
-Explanation: `"lee(t(co)de)"`, `"lee(t(c)ode)"` would also be accepted.
-
-### Example 2:
-
-Input: `s = "a)b(c)d"`  
-Output: `"ab(c)d"`
-
-### Example 3:
-
-Input: `s = "))(("`  
-Output: `""`  
-Explanation: An empty string is also valid.
-
-## Constraints:
-
-- 1 <= s.length <= 10^5
-- `s[i]` is either `'('`, `')'`, or lowercase English letter.
+        return s;
+    }
+};
