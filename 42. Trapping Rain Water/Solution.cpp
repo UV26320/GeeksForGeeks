@@ -32,7 +32,7 @@ public:
         {
             // here we can start i = n - 2 bcz of in second step we can see
             // right side any taller height building present or not soo we can
-            // do i = (n - 2) + 1 that is equal to n-1 and it is vaild
+            // do i = (n - 2) + 1 that is equal to n-1 and it is valid
             // statement. if we can start i = n-1 then we can never reach
             // farther step. sooo that's way here we can start --> i= n - 2
             right[i] = max(right[i + 1], height[i]);
