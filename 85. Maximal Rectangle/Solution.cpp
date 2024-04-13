@@ -1,19 +1,23 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 private:
-    vector<int> nextSmallerElement(vector<int> arr, int n) {
+    vector<int> nextSmallerElement(vector<int> arr, int n)
+    {
 
         stack<int> s;
         s.push(-1);
         vector<int> ans(n);
 
-        for (int i = n - 1; i >= 0; --i) {
+        for (int i = n - 1; i >= 0; --i)
+        {
 
             int curr = arr[i];
 
-            while (s.top() != -1 && arr[s.top()] >= curr) {
+            while (s.top() != -1 && arr[s.top()] >= curr)
+            {
 
                 s.pop();
             }
@@ -26,17 +30,20 @@ private:
         return ans;
     }
 
-    vector<int> prevSmallerElement(vector<int> arr, int n) {
+    vector<int> prevSmallerElement(vector<int> arr, int n)
+    {
 
         stack<int> s;
         s.push(-1);
         vector<int> ans(n);
 
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i)
+        {
 
             int curr = arr[i];
 
-            while (s.top() != -1 && arr[s.top()] >= curr) {
+            while (s.top() != -1 && arr[s.top()] >= curr)
+            {
 
                 s.pop();
             }
@@ -49,7 +56,8 @@ private:
         return ans;
     }
 
-    int largestRectangleArea(vector<int>& heights) {
+    int largestRectangleArea(vector<int> &heights)
+    {
 
         int n = heights.size();
 
@@ -61,11 +69,13 @@ private:
 
         int area = INT_MIN;
 
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i)
+        {
 
             int l = heights[i];
 
-            if (next[i] == -1) {
+            if (next[i] == -1)
+            {
                 next[i] = n;
             }
 
@@ -80,20 +90,27 @@ private:
     }
 
 public:
-    int maximalRectangle(vector<vector<char>>& matrix) {
-        if(matrix.empty() || matrix[0].empty()) {
+    int maximalRectangle(vector<vector<char>> &matrix)
+    {
+        if (matrix.empty() || matrix[0].empty())
+        {
             return 0;
         }
 
         int maxi = INT_MIN;
         vector<int> histogram(matrix[0].size(), 0);
 
-        for (int i = 0; i < matrix.size(); ++i) {
+        for (int i = 0; i < matrix.size(); ++i)
+        {
             // to create a histogram array
-            for (int j = 0; j < histogram.size(); ++j) {
-                if (matrix[i][j] == '1') {
+            for (int j = 0; j < histogram.size(); ++j)
+            {
+                if (matrix[i][j] == '1')
+                {
                     histogram[j]++;
-                } else {
+                }
+                else
+                {
                     histogram[j] = 0;
                 }
             }
