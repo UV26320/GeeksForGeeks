@@ -1,15 +1,18 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    TreeNode* add(TreeNode* root, int val, int depth, int curr) {
+    TreeNode *add(TreeNode *root, int val, int depth, int curr)
+    {
         if (!root)
             return nullptr;
 
-        if (curr == depth - 1) {
-            TreeNode* lTemp = root->left;
-            TreeNode* rTemp = root->right;
+        if (curr == depth - 1)
+        {
+            TreeNode *lTemp = root->left;
+            TreeNode *rTemp = root->right;
 
             root->left = new TreeNode(val);
             root->right = new TreeNode(val);
@@ -25,9 +28,11 @@ public:
         return root;
     }
 
-    TreeNode* addOneRow(TreeNode* root, int val, int depth) {
-        if (depth == 1) {
-            TreeNode* newRoot = new TreeNode(val);
+    TreeNode *addOneRow(TreeNode *root, int val, int depth)
+    {
+        if (depth == 1)
+        {
+            TreeNode *newRoot = new TreeNode(val);
             newRoot->left = root;
             return newRoot;
         }
