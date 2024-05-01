@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    string reversePrefix(string word, char ch) {
+    string reversePrefix(string word, char ch)
+    {
 
         int n = word.find(ch);
         if (ch == -1)
