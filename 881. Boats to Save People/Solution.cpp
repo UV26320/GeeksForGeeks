@@ -1,20 +1,26 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int numRescueBoats(vector<int>& people, int limit) {
+    int numRescueBoats(vector<int> &people, int limit)
+    {
         sort(people.begin(), people.end());
         int n = people.size();
         int left = 0, right = n - 1;
         int NoBots = 0;
 
-        while (left <= right) {
-            if (people[left] + people[right] <= limit) {
+        while (left <= right)
+        {
+            if (people[left] + people[right] <= limit)
+            {
                 NoBots++;
                 left++;
                 right--;
-            } else {
+            }
+            else
+            {
                 NoBots++;
                 right--;
             }
