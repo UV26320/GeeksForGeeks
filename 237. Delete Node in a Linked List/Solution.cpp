@@ -10,21 +10,24 @@ using namespace std;
  * };
  */
 
-struct ListNode {
-     int val;
-      ListNode *next;
-      ListNode(int x) : val(x), next(NULL) {}
-  };
-  
-class Solution {
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+class Solution
+{
 public:
-    void deleteNode(ListNode* node) {
-        
+    void deleteNode(ListNode *node)
+    {
+
         // base case
-        if(node == nullptr) return;
+        if (node == nullptr)
+            return;
 
-        node->val = node -> next -> val;
-        node -> next = node -> next -> next;
-
+        node->val = node->next->val;
+        node->next = node->next->next;
     }
 };
